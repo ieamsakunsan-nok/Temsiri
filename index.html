@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ครูเต็มศิริ เอี่ยมสกุล - Portfolio & Report</title>
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Mitr:wght@300;400;500;600&family=Sarabun:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #1e3a8a;
+            --secondary: #3b82f6;
+            --accent: #f59e0b;
+            --success: #10b981;
+            --bg: #f8fafc;
+            --text-dark: #1e293b;
+            --text-light: #64748b;
+            --white: #ffffff;
+            --card-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Sarabun', sans-serif;
+            background-color: var(--bg);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: var(--white);
+            padding: 80px 20px 140px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: var(--bg);
+            clip-path: polygon(0 100%, 100% 100%, 100% 0);
+        }
+
+        .hero h1 {
+            font-family: 'Mitr', sans-serif;
+            font-size: 3rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+            letter-spacing: -1px;
+        }
+
+        .hero p.en-name {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            font-weight: 300;
+            margin-bottom: 20px;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1100px;
+            margin: -80px auto 60px;
+            padding: 0 20px;
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Profile Card */
+        .profile-card {
+            background: var(--white);
+            border-radius: 24px;
+            padding: 40px;
+            box-shadow: var(--card-shadow);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .profile-img-container {
+            position: relative;
+            margin-bottom: 25px;
+        }
+
+        .profile-img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 8px solid var(--white);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+        }
+
+        .badge {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: var(--accent);
+            color: var(--white);
+            padding: 8px 15px;
+            border-radius: 50px;
+            font-family: 'Mitr', sans-serif;
+            font-size: 0.9rem;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        .position-title {
+            font-family: 'Mitr', sans-serif;
+            color: var(--primary);
+            font-size: 1.8rem;
+            margin-bottom: 5px;
+        }
+
+        .school-name {
+            color: var(--text-light);
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
+
+        /* Infographic Grid */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+        }
+
+        .info-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 35px;
+            box-shadow: var(--card-shadow);
+            border-left: 8px solid var(--secondary);
+            transition: all 0.3s ease;
+        }
+
+        .info-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .card-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(59, 130, 246, 0.1);
+            color: var(--secondary);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+
+        .info-card h3 {
+            font-family: 'Mitr', sans-serif;
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+
+        .achievement-text {
+            color: var(--accent);
+            font-weight: 700;
+            font-size: 1.2rem;
+            line-height: 1.4;
+            display: block;
+            margin-top: 10px;
+        }
+
+        /* Copy Section (Executive Report) */
+        .report-section {
+            margin-top: 50px;
+            background: var(--text-dark);
+            border-radius: 24px;
+            padding: 45px;
+            color: var(--white);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+
+        .report-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 20px;
+        }
+
+        .report-header h2 {
+            font-family: 'Mitr', sans-serif;
+            font-size: 1.6rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .btn-copy {
+            background: var(--success);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 12px;
+            font-family: 'Mitr', sans-serif;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-copy:hover {
+            background: #059669;
+            transform: scale(1.05);
+        }
+
+        .report-content {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 15px;
+            padding: 25px;
+            font-family: 'Sarabun', sans-serif;
+            font-size: 1rem;
+            line-height: 1.8;
+            max-height: 350px;
+            overflow-y: auto;
+            white-space: pre-line;
+            scrollbar-width: thin;
+            scrollbar-color: var(--secondary) transparent;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 60px 20px;
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.2rem; }
+            .report-header { flex-direction: column; gap: 20px; text-align: center; }
+            .container { margin-top: -60px; }
+            .profile-card { padding: 30px 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <section class="hero">
+        <h1>เต็มศิริ เอี่ยมสกุล</h1>
+        <p class="en-name">Temsiri Ieamsakun</p>
+    </section>
+
+    <div class="container">
+        <!-- Main Profile -->
+        <div class="profile-card">
+            <div class="profile-img-container">
+                <img src="รูปตัวเอง.jpg" alt="ครูเต็มศิริ เอี่ยมสกุล" class="profile-img">
+                <div class="badge"><i class="fas fa-check-circle"></i> ยืนยันข้อมูล</div>
+            </div>
+            <h2 class="position-title">ครูชำนาญการ</h2>
+            <p class="school-name"><i class="fas fa-school"></i> โรงเรียนอุตรดิตถ์ดรุณี</p>
+            <div style="display: flex; gap: 10px; flex-wrap: wrap; justify-content: center;">
+                <span style="background: #e0f2fe; color: #0369a1; padding: 5px 15px; border-radius: 20px; font-size: 0.85rem; font-weight: 700;">PA 2567</span>
+                <span style="background: #fef3c7; color: #92400e; padding: 5px 15px; border-radius: 20px; font-size: 0.85rem; font-weight: 700;">English Dept.</span>
+            </div>
+        </div>
+
+        <!-- Infographic Grid -->
+        <div class="info-grid">
+            <!-- Education -->
+            <div class="info-card">
+                <div class="card-icon"><i class="fas fa-user-graduate"></i></div>
+                <h3>ประวัติการศึกษา</h3>
+                <p><strong>ระดับปริญญาโท</strong></p>
+                <p>Teaching English as a Foreign Language (TEFL)</p>
+                <p style="color: var(--text-light); margin-top: 10px; font-size: 0.9rem;">เชี่ยวชาญด้านการสอนภาษาอังกฤษในฐานะภาษาต่างประเทศ</p>
+            </div>
+
+            <!-- Achievement -->
+            <div class="info-card" style="border-left-color: var(--accent);">
+                <div class="card-icon" style="background: rgba(245, 158, 11, 0.1); color: var(--accent);"><i class="fas fa-star"></i></div>
+                <h3>ผลงานโดดเด่น</h3>
+                <p>ภายใต้แนวคิดหลัก:</p>
+                <span class="achievement-text">"Read, Borrow, Share and Create"</span>
+                <p style="margin-top: 15px; font-size: 0.9rem;">นวัตกรรมส่งเสริมการเรียนรู้เชิงรุก (Active Learning) เพื่อพัฒนาทักษะทางภาษาอย่างยั่งยืน</p>
+            </div>
+        </div>
+
+        <!-- Executive Report (Copy Section) -->
+        <div class="report-section">
+            <div class="report-header">
+                <h2><i class="fas fa-file-contract" style="color: var(--secondary);"></i> ข้อมูลรายงานองค์ประกอบที่ 2</h2>
+                <button class="btn-copy" onclick="copyText()">
+                    <i class="fas fa-copy"></i> คัดลอกข้อความ
+                </button>
+            </div>
+            <div class="report-content" id="reportArea">รายงานผลการดำเนินงานตามองค์ประกอบที่ 2
+การประเมินการมีส่วนร่วมในการพัฒนาการศึกษา
+ข้าพเจ้านางสาวเต็มศิริ เอี่ยมสกุล ตำแหน่ง ครู วิทยฐานะ ชำนาญการ
+สถานศึกษา โรงเรียนอุตรดิตถ์ดรุณี
+
+1. หน้าที่ความรับผิดชอบในกลุ่มบริหาร
+- ปริมาณงานที่รับผิดชอบ (5 คะแนน) ในกลุ่มบริหารวิชาการ 21 ชั่วโมง / สัปดาห์
+- ความสำเร็จของงานที่รับผิดชอบ (5 คะแนน) มีความสำเร็จของงานในหน้าที่ที่ได้รับมอบหมาย
+
+2. การปฏิบัติงานตามคำสั่งของโรงเรียน
+- ปริมาณงาน ตามคำสั่งโรงเรียน (5 คะแนน) รวมจำนวน 20 ครั้งที่ร่วมงาน
+- ความสำเร็จของงานตามคำสั่งของโรงเรียน (5 คะแนน) ดำเนินงานได้ตามคำสั่ง
+
+3. กิจกรรม 5 ส
+- ความสำเร็จของห้องเรียนคุณภาพ ห้อง 735 อาคาร 7 ได้รับการประเมินสีเขียว
+- ความสำเร็จของกิจกรรม 5 ส ห้อง 415 อาคาร 4 ผลการประเมินระดับดีมาก</div>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2026 Temsiri Ieamsakun | <i class="fas fa-envelope"></i> Contact for Academic Purpose</p>
+        <p style="margin-top: 10px; font-size: 0.75rem; opacity: 0.6;">Designed for Executive Presentation Portfolio</p>
+    </footer>
+
+    <script>
+        function copyText() {
+            const text = document.getElementById('reportArea').innerText;
+            navigator.clipboard.writeText(text).then(() => {
+                const btn = document.querySelector('.btn-copy');
+                const originalText = btn.innerHTML;
+                btn.style.background = '#059669';
+                btn.innerHTML = '<i class="fas fa-check"></i> คัดลอกแล้ว!';
+                
+                setTimeout(() => {
+                    btn.style.background = '#10b981';
+                    btn.innerHTML = originalText;
+                }, 2000);
+            }).catch(err => {
+                alert('ไม่สามารถคัดลอกได้ กรุณาลองอีกครั้ง');
+            });
+        }
+    </script>
+
+</body>
+</html>
